@@ -29,3 +29,8 @@ def readBinaryWatch(self, turnedOn: int) -> List[str]:
             if bin(h).count('1') + bin(m).count('1') == turnedOn:
                 output.append(f"{h}:{m:02d}")
     return output
+
+# 461 count bit diff
+x = 1
+y = 4
+bin(x ^ y).count('1') # -> 2 bits are not same.
