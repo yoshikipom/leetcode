@@ -1,5 +1,6 @@
 import bisect
 from collections import defaultdict
+from typing import List
 
 # find value with log(n) time complexity (arr must be sorted)
 def contains_value(arr, value):
@@ -34,3 +35,25 @@ def readBinaryWatch(self, turnedOn: int) -> List[str]:
 x = 1
 y = 4
 bin(x ^ y).count('1') # -> 2 bits are not same.
+
+# 409 counter 
+from collections import Counter
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        result = 0
+        c = Counter(s)
+        for k, v in c.items():
+            result += (v // 2) * 2
+            
+        if not result == len(s) or len(s) == 1:
+            result += 1
+        return result
+
+def div_mod():
+    q, mod = divmod(10, 3)
+    print(q, mod) # 3 1
+
+
+from itertools import accumulate
+def accum(nums: List[int]):
+    list(accumulate(nums))
