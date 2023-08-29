@@ -11,12 +11,11 @@ from typing import List
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        A = [0] + list(accumulate(nums))
-        min_val = 0
-        result = max(nums)
-        for a in A[1:]:
-            result = max(result, a - min_val)
-            min_val = min(min_val, a)
+        current_sum = nums[0]
+        result = nums[0]
+        for num in nums[1:]:
+            current_sum = max(num, current_sum+num)
+            result = max(result, current_sum)
         return result
             
             
