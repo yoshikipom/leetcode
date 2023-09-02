@@ -57,3 +57,6 @@ def div_mod():
 from itertools import accumulate
 def accum(nums: List[int]):
     list(accumulate(nums))
+    
+def letter_to_num():
+    ord('c')-ord('a') # 2
