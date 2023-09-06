@@ -1,5 +1,6 @@
 import bisect
 from collections import defaultdict
+import re
 from typing import List
 
 # find value with log(n) time complexity (arr must be sorted)
@@ -60,3 +61,12 @@ def accum(nums: List[int]):
     
 def letter_to_num():
     ord('c')-ord('a') # 2
+
+
+def split_by_non_letters(text):
+    pattern = r'[^a-zA-Z]+'
+    return re.split(pattern, text)
+
+# text = "Hello! This is a message."
+# result = split_by_non_letters(text)
+# print(result)  # Output: ['Hello', 'This', 'is', 'a', 'message']
