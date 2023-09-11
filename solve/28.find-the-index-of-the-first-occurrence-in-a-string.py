@@ -1,0 +1,20 @@
+#
+# @lc app=leetcode id=28 lang=python3
+#
+# [28] Find the Index of the First Occurrence in a String
+#
+
+# @lc code=start
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        l = len(needle)
+        for start in range(len(haystack)-(l-1)):
+            for i in range(l):
+                if haystack[start+i] != needle[i]:
+                    break
+            else:
+                return start
+        return -1
+                
+        
+# @lc code=end
